@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+2.times do |i|
+  user = User.new(email: "admin#{i + 1}@laboratoria.la",
+                  password: '12345678', # Devise.friendly_token[0,20]
+                  password_confirmation: '12345678')
+
+  user.profile = Admin.new(name: "admin#{i + 1}")
+  user.save
+end
+
+2.times do |i|
+  user = User.new(email: "customer#{i + 1}@laboratoria.la",
+                  password: '12345678', # Devise.friendly_token[0,20]
+                  password_confirmation: '12345678')
+
+  user.profile = Customer.new(name: "customer#{i + 1}")
+  user.save
+end

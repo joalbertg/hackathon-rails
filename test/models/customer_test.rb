@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: admins
+# Table name: customers
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -9,12 +9,10 @@
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+require 'test_helper'
 
-one:
-  name: MyString
-  active: false
-
-two:
-  name: MyString
-  active: false
+class CustomerTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

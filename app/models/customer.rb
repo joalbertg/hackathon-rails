@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: admins
+# Table name: customers
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -9,12 +9,6 @@
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  active: false
-
-two:
-  name: MyString
-  active: false
+class Customer < ActiveRecord::Base
+  has_one :user, as: :profile
+end
